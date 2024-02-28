@@ -1,20 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View , ImageBackground } from 'react-native';
+import styles from './src/style/styleSheet';
+import ComponentHeader from './src/components/componentHeader';
+import ComponentFooter from './src/components/componentFooter';
+import ComponentBody from './src/components/componentBody';
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+    <ImageBackground 
+      source={require('./src/assets/images/Fundo.png')}
+      style={styles.fundo}>
+    
+      <View style={styles.container}>
+        <ComponentHeader/>
+        <ComponentBody/>
+        <ComponentFooter/>
+      </View>
+
+    </ImageBackground>
+
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
